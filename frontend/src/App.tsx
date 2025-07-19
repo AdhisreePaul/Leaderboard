@@ -5,7 +5,7 @@ import {
   addUser,
   claimPoints,
 } from './services/api';
-import type { User, ClaimResponse } from './services/api';
+import type { User } from './services/api';
 
 import UserSelector from './components/UserSelector';
 import AddUserForm from './components/AddUserForm';
@@ -17,7 +17,6 @@ const socket = io(import.meta.env.VITE_API_URL);
 function App() {
   const [users, setUsers] = useState<User[]>([]);
   const [selectedUserId, setSelectedUserId] = useState('');
-  const [lastClaim, setLastClaim] = useState<ClaimResponse | null>(null);
   const [activeTab, setActiveTab] = useState('wealth');
   const [timeFilter, setTimeFilter] = useState('daily');
   const [notification, setNotification] = useState<{ message: string; type: 'success' | 'error' | 'info' } | null>(null);
@@ -62,8 +61,7 @@ function App() {
       return;
     }
     try {
-    const result = await claimPoints(selectedUserId);
-    setLastClaim(result);
+    await claimPoints(selectedUserId);
       showNotification('Your points has been claimed! 🎉', 'success');
     } catch (error: any) {
       console.error('Claim points error:', error);
