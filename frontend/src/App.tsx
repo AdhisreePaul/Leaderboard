@@ -12,7 +12,8 @@ import AddUserForm from './components/AddUserForm';
 import ClaimButton from './components/ClaimButton';
 import Notification from './components/Notification';
 
-const socket = io(import.meta.env.VITE_API_URL);
+// Only create socket if backend URL exists
+const socket = import.meta.env.VITE_API_URL ? io(import.meta.env.VITE_API_URL) : null;
 
 function App() {
   const [users, setUsers] = useState<User[]>([]);
@@ -38,10 +39,12 @@ function App() {
 
   useEffect(() => {
     loadUsers();
-    socket.on('leaderboardUpdate', loadUsers);
-    return () => {
-      socket.off('leaderboardUpdate');
-    };
+    if (socket) {
+      socket.on('leaderboardUpdate', loadUsers);
+      return () => {
+        socket.off('leaderboardUpdate');
+      };
+    }
   }, []);
 
   const handleAddUser = async (name: string) => {
