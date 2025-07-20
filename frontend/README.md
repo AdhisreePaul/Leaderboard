@@ -2,11 +2,6 @@
 
 A modern, responsive leaderboard application with real-time updates, built with React, Node.js, and Socket.io. Features a beautiful mobile-first UI with smooth animations and instant notifications.
 
-![Leaderboard Demo](https://img.shields.io/badge/Status-Live-brightgreen)
-![React](https://img.shields.io/badge/React-19.1.0-blue)
-![Node.js](https://img.shields.io/badge/Node.js-Express-green)
-![MongoDB](https://img.shields.io/badge/Database-MongoDB-green)
-![Socket.io](https://img.shields.io/badge/Real--time-Socket.io-orange)
 
 ## ✨ Features
 
