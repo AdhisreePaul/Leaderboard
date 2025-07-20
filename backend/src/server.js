@@ -1,29 +1,34 @@
 require('dotenv').config();
-require('./db/conn'); 
 const http = require('http');
 const mongoose = require('mongoose');
 const { Server } = require('socket.io');
+const app = require('./app'); // Your Express app
 
-const app = require('./app');
 const server = http.createServer(app);
 
-const io = new Server(server, { 
-  cors: { 
-    origin: process.env.CLIENT_ORIGIN || "http://localhost:5173" 
-  } 
+// --- Corrected Socket.IO CORS Configuration ---
+const io = new Server(server, {
+  cors: {
+    origin: process.env.CLIENT_ORIGIN || "http://localhost:5173",
+    credentials: true // Added for consistency
+  }
 });
 
-// Make sure this middleware is added BEFORE the routes
-app.use((req, res, next) => { 
-  req.io = io; 
-  next(); 
+// Middleware to attach io to each request
+app.use((req, res, next) => {
+  req.io = io;
+  next();
 });
 
 const PORT = process.env.PORT || 4000;
+
+// --- Simplified, Single Database Connection ---
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
-    console.log('MongoDB connected');
-    server.listen(PORT, () => console.log(`API on :${PORT}`));
+    console.log('MongoDB connected successfully');
+    server.listen(PORT, () => console.log(`Server is listening on port: ${PORT}`));
   })
-  .catch(console.error);
+  .catch((err) => {
+    console.error("Failed to connect to MongoDB", err);
+  });
