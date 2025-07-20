@@ -1,4 +1,5 @@
 require('dotenv').config();
+require('./db/conn'); 
 const http = require('http');
 const mongoose = require('mongoose');
 const { Server } = require('socket.io');
