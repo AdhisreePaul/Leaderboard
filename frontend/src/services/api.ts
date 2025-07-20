@@ -27,16 +27,16 @@ export interface ClaimResponse {
 }
 
 export const fetchUsers = async (): Promise<User[]> => {
-  const res = await api.get('/users');
+  const res = await api.get('/api/users');
   return res.data;
 };
 
 export const addUser = async (name: string): Promise<User> => {
-  const res = await api.post('/users', { name });
+  const res = await api.post('/api/users', { name });
   return res.data;
 };
 
 export const claimPoints = async (userId: string): Promise<ClaimResponse> => {
-  const res = await api.post('/claim', { userId });
+  const res = await api.post('/api/claim', { userId });
   return res.data;
 };
