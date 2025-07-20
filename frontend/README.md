@@ -37,19 +37,9 @@ A modern, responsive leaderboard application with real-time updates, built with 
 
 ##  Live Demo
 
-**Frontend**: [Vercel Deployment](https://your-app.vercel.app)  
-**Backend**: [Railway Deployment](https://your-backend.railway.app)
+**Frontend**: [Vercel Deployment](https://leaderboard-4raw.vercel.app/)  
+**Backend**: [Railway Deployment](https://railway.com/project/17330635-d18c-4efa-b404-ab8177c5480d?environmentId=09352fa0-c349-4ace-a94a-1704baeb6ecc)
 
-## 📱 Screenshots
-
-### Main Leaderboard
-![Main Leaderboard](https://via.placeholder.com/400x800/FFD700/000000?text=Leaderboard+View)
-
-### Add User Interface
-![Add User](https://via.placeholder.com/400x800/FF6B35/FFFFFF?text=Add+User+Form)
-
-### Real-time Notifications
-![Notifications](https://via.placeholder.com/400x800/4CAF50/FFFFFF?text=Success+Notification)
 
 ## 🛠️ Tech Stack
 
@@ -148,7 +138,7 @@ If you have any questions or need help, please open an issue on GitHub or contac
 
 ---
 
-**Made with ❤️ by [Your Name]**
+**Made with ❤️ by Adhisree**
 
 [![GitHub stars](https://img.shields.io/github/stars/yourusername/leaderboard-project)](https://github.com/yourusername/leaderboard-project/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/yourusername/leaderboard-project)](https://github.com/yourusername/leaderboard-project/network)
