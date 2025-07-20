@@ -120,9 +120,6 @@ A modern, responsive leaderboard application with real-time updates, built with 
    npm run dev
    ```
 
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🤝 Contributing
 
@@ -139,7 +136,3 @@ If you have any questions or need help, please open an issue on GitHub or contac
 ---
 
 **Made with ❤️ by Adhisree**
-
-[![GitHub stars](https://img.shields.io/github/stars/yourusername/leaderboard-project)](https://github.com/yourusername/leaderboard-project/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/yourusername/leaderboard-project)](https://github.com/yourusername/leaderboard-project/network)
-[![GitHub issues](https://img.shields.io/github/issues/yourusername/leaderboard-project)](https://github.com/yourusername/leaderboard-project/issues)
